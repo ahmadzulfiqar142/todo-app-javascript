@@ -57,6 +57,35 @@
            };  
 
        }
+               // deletefunction
+               function deletefunction(id){
+            let y =document.getElementById(id);
+            y.remove();
+            a=id;
+        }
+
+        // editfunction
+        function editfunction(id){
+           addbtn.style.display="none";
+            btn.style.display="inline-block"
+             // where edit method use
+            let spn =document.getElementById(id);
+            document.getElementById('txtVal').value = spn.innerHTML;
+
+        }
+        // updatefunction
+        function updatefunction(id){
+            addbtn.style.display="inline-block"; 
+            let span =document.getElementById(id);
+            let txtVal = document.getElementById('txtVal').value;
+            span.innerHTML = txtVal;
+             document.getElementById('txtVal').value= '';
+             let b=document.getElementById('upbtn');
+             b.remove();
+            console.log(id);
+        }
+
+   
     </script>
   </body>
 </html>
