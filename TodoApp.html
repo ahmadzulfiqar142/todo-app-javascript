@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <input type="text" name="inp" id="txtVal" />
+    <button type="button" id="addbtn" onclick="addfunction()">Add</button>
+    <p id="btn"></p>
+    <ul id="ul"></ul>
+    <script>
+        function addfunction(){
+    		    
+                let  list = document.getElementById('ul');
+                let txtVal = document.getElementById('txtVal').value;
+                document.getElementById('txtVal').value= '';
+                let x= Math.random()*100;
+                let li = document.createElement("li");
+                 li.id="uniuqeid" +x; 
+                      
+                   // delelebutton 
+               let deletebutton= document.createElement("button");
+                   // editbutton
+               let editbutton = document.createElement("button");
+               let updatebutton = document.createElement("button");
+               updatebutton.id="upbtn";
+               updatebutton .innerHTML = "Update";
+               span = document.createElement("span");
+               span.id="uniuqeid2" +x;   
+               span.innerHTML = txtVal;
+               deletebutton.innerHTML = " Delete";
+               editbutton.innerHTML = "Edit";
+                  
+                   // list.appendChild(li);
+                   list.appendChild(li);
+                   li.appendChild(span);
+                   li.appendChild(deletebutton);
+                   li.appendChild(editbutton);  
+                   // delelebutton function
+                  deletebutton.onclick= function(){
+                       deletefunction("uniuqeid" + x);
+                   }; 
 
-</body>
+                   // editbutton function
+                   editbutton.onclick= function(){
+                  editfunction("uniuqeid2" + x);
+                document.getElementById("btn").appendChild(updatebutton);
+        
+                   };
+                   // updatebutton function 
+               updatebutton.onclick= function(){
+               updatefunction("uniuqeid2" + x);
+           };  
 
+       }
+    </script>
+  </body>
 </html>
