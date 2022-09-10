@@ -8,16 +8,21 @@ function addfunction() {
     document.getElementById('txtVal').value = '';
     let x = Math.random() * 100;
     let li = document.createElement("li");
+    li.setAttribute("class", "list");
     li.id = "uniuqeid" + x;
 
-    // delelebutton 
-    let deletebutton = document.createElement("button");
     // editbutton
     let editbutton = document.createElement("button");
+    editbutton.setAttribute("class", "btn-edit");
+    // delelebutton 
+    let deletebutton = document.createElement("button");
+    deletebutton.setAttribute("class", "btn-delete");
     let updatebutton = document.createElement("button");
     updatebutton.id = "upbtn";
     updatebutton.innerHTML = "Update";
+    updatebutton.setAttribute("class", "btn-update");
     span = document.createElement("span");
+    span.setAttribute("class", "title");
     span.id = "uniuqeid2" + x;
     span.innerHTML = txtVal;
     deletebutton.innerHTML = " Delete";
@@ -26,8 +31,8 @@ function addfunction() {
     // list.appendChild(li);
     list.appendChild(li);
     li.appendChild(span)
-    li.appendChild(deletebutton)
     li.appendChild(editbutton)
+    li.appendChild(deletebutton)
 
     // delelebutton function
     deletebutton.onclick = function () {
