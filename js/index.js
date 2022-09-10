@@ -19,21 +19,16 @@ function addfunction() {
     updatebutton.innerHTML = "Update";
     span = document.createElement("span");
     span.id = "uniuqeid2" + x;
-    let listDiv = document.createElement('div')
-    let buttonDiv = document.createElement('div')
-    let textList = document.createElement('div')
     span.innerHTML = txtVal;
     deletebutton.innerHTML = " Delete";
     editbutton.innerHTML = "Edit";
 
     // list.appendChild(li);
     list.appendChild(li);
-    li.appendChild(listDiv);
-    listDiv.appendChild(textList)
-    listDiv.appendChild(buttonDiv)
-    textList.appendChild(span)
-    buttonDiv.appendChild(deletebutton)
-    buttonDiv.appendChild(editbutton)
+    li.appendChild(span)
+    li.appendChild(deletebutton)
+    li.appendChild(editbutton)
+
     // delelebutton function
     deletebutton.onclick = function () {
         deletefunction("uniuqeid" + x);
@@ -49,8 +44,6 @@ function addfunction() {
     updatebutton.onclick = function () {
         updatefunction("uniuqeid2" + x);
     };
-    // desing of app 
-
 
 }
 // deletefunction
